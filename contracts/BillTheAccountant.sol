@@ -4,11 +4,11 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
- * @title SplitwiseV2
+ * @title BillTheAccountant
  * @dev A decentralized debt ledger that nets balances between peers and
  *      maintains a historical record of all transactions using events.
  */
-contract Splitwise {
+contract BillTheAccountant {
 
     // Core data structure: tokenAddress => debtor => creditor => amount
     mapping(address => mapping(address => mapping(address => uint256))) public debts;

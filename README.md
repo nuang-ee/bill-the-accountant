@@ -36,7 +36,7 @@
          state is: Bob owes Alice $10.
        * If the debts are equal, both are cleared to zero.
 
-  3. Updated Solidity Implementation (SplitwiseV2)
+  3. Updated Solidity Implementation (BillTheAccountant)
 
   Here is how the smart contract could be refactored to support this. I'll create a new function addDebt which will be the core of this new system.
 
@@ -45,7 +45,7 @@
     3
     4 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
     5
-    6 contract SplitwiseV2 {
+    6 contract BillTheAccountant {
     7
     8     // tokenAddress => debtor => creditor => amount
     9     mapping(address => mapping(address => mapping(address => uint256))) public debts;
@@ -128,7 +128,7 @@
 
   This is a powerful and elegant solution for P2P debt.
 
-  Would you like me to refactor the current Splitwise.sol contract to implement this P2P debt netting model?
+  Would you like me to refactor the current BillTheAccountant.sol contract to implement this P2P debt netting model?
 
 ╭─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │  > The concern here is - does shifting from bill-centric to debt-ledger model makes the usage of the storage heavier? Compare the efficiency of each    │
@@ -241,14 +241,14 @@
 
   Implementation Steps
 
-  Here’s how we would modify the SplitwiseV2 contract:
+  Here’s how we would modify the BillTheAccountant contract:
 
   1. Define a DebtAdded Event
 
   First, we define the structure of our historical record. We'll include who initiated the action, the details of the debt, and a descriptive memo. We use indexed
   for the addresses to make querying for a specific user's history much faster and cheaper.
 
-    1 contract SplitwiseV2 {
+    1 contract BillTheAccountant {
     2     // ... existing mapping ...
     3
     4     uint256 public debtActionCounter;
@@ -321,7 +321,7 @@
 
   This is the standard, production-grade pattern for building sophisticated and trustworthy dApps.
 
-  Shall I update the SplitwiseV2.sol contract to include this DebtAdded event and the memo field?
+  Shall I update the BillTheAccountant.sol contract to include this DebtAdded event and the memo field?
 
 
 

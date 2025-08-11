@@ -2,7 +2,7 @@ import { Client, GatewayIntentBits, Message, Partials, User, ActionRowBuilder, S
 import dotenv from 'dotenv';
 import fs from 'fs';
 import { ethers, Contract, Wallet, JsonRpcProvider, EventLog } from 'ethers';
-import SplitwiseABI from '../artifacts/contracts/Splitwise.sol/Splitwise.json';
+import BillTheAccountantABI from '../artifacts/contracts/BillTheAccountant.sol/BillTheAccountant.json';
 
 dotenv.config();
 
@@ -23,7 +23,7 @@ const client = new Client({
 
 const provider = new JsonRpcProvider(RPC_URL);
 const wallet = new Wallet(PRIVATE_KEY, provider);
-const contract = new Contract(CONTRACT_ADDRESS, SplitwiseABI.abi, wallet);
+const contract = new Contract(CONTRACT_ADDRESS, BillTheAccountantABI.abi, wallet);
 
 // --- User Wallets Persistence ---
 let userWallets: { [discordId: string]: string } = {};
@@ -183,7 +183,7 @@ client.on('messageCreate', async (message: Message) => {
 
         case 'help': {
             const helpMessage = `
-**Splitwise Bot Commands**
+**BillTheAccountant Bot Commands**
 
 **>register** - Register yourself and get a new wallet.
 **>add-debt @user <amount> [token] <memo...>** - Add a new debt. If no token is specified, a dropdown will appear.

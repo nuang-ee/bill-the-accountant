@@ -1,12 +1,12 @@
 import { ethers } from "hardhat";
 
 async function main() {
-    const Splitwise = await ethers.getContractFactory("Splitwise");
-    const splitwise = await Splitwise.deploy();
+    const BillTheAccountant = await ethers.getContractFactory("BillTheAccountant");
+    const billTheAccountant = await BillTheAccountant.deploy();
 
-    await splitwise.waitForDeployment();
+    await billTheAccountant.waitForDeployment();
 
-    console.log("Splitwise deployed to:", splitwise.target);
+    console.log("BillTheAccountant deployed to:", billTheAccountant.target);
 }
 
 main().catch((error) => {
