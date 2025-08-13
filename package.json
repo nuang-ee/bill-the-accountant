@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx hardhat test",
     "start": "node dist/bot.js",
     "start-local": "npx hardhat node",
     "build": "tsc",
-    "dev": "ts-node src/bot.ts"
+    "dev": "nodemon --exec ts-node src/bot.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "discord.js": "^14.21.0",
     "dotenv": "^17.2.1",
     "ethers": "^6.15.0",
@@ -38,6 +39,7 @@
     "chai": "^4.5.0",
     "hardhat": "^2.26.1",
     "hardhat-gas-reporter": "^2.3.0",
+    "nodemon": "^3.1.10",
     "solidity-coverage": "^0.8.16",
     "ts-node": "^10.9.2",
     "typechain": "^8.3.2",

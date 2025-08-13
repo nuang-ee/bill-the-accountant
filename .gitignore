@@ -4,4 +4,3 @@ artifacts
 cache
 typechain-types
 dist
-user-wallets.json
