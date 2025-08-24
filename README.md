@@ -159,7 +159,7 @@ The current implementation does **not** use a custom token, instead leveraging e
 
 
 **- Screenshots or demo images:**  
-*(Placeholder for 2-3 demo images showing:)*
+
 1. *Natural conversation detection and AI analysis*
 
 ![CleanShot 2025-08-13 at 13.37.08](https://hackmd.io/_uploads/ryXFUcFOgl.png)
